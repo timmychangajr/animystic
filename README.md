@@ -1,6 +1,12 @@
-# Welcome to your Expo app 👋
+# Welcome to Animystic!
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a demo project I developed using Expo.
+
+## APIs Used
+ - Api Ninjas
+   - Utilized `/animals` endpoint to search user input
+ - Unsplash Images API
+   - To complement animal info, I use unsplash to append a related image
 
 ## Get started
 
