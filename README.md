@@ -46,8 +46,11 @@ In the output, you'll find options to open the app in a
    brew tap mobile-dev-inc/tap
    brew install maestro
    ```
-
-2. In your terminal, make sure you in the project's directory, and run the following
+2. This is testing with live data, so you will need to run the following before running e2e
+   ```
+   npx expo start
+   ```
+3. In a separate terminal tab, make sure you are in the project's directory, and run the following
    ```
    maestro test .maestro/search_animal.yml
    ``` 
