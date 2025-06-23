@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsScreen renders correctly 1`] = `
+<View
+  style={
+    [
+      false,
+      {
+        "backgroundColor": "#000000B5",
+      },
+      undefined,
+    ]
+  }
+>
+  <ActivityIndicator
+    color="#CCCCCC"
+    size="large"
+  />
+</View>
+`;

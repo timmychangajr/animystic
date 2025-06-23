@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { AppColors } from "./Colors";
 
 export const defaultBorderRadius = 20;
 export const defaultPadding = 20;
@@ -7,6 +8,7 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: defaultPadding,
+    backgroundColor: AppColors.background,
   },
   titleContainer: {
     flexDirection: 'row',

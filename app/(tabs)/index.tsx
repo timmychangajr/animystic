@@ -38,7 +38,7 @@ export default function HomeScreen() {
     setIsLoading(false)
   }
   return (
-    <ThemedView isSafeArea style={globalStyles.container} backgroundColor='background'>
+    <ThemedView isSafeArea style={globalStyles.container}>
       <View style={[globalStyles.titleContainer, { flex: 0.5, flexDirection: 'column' }]}>
         <ThemedText type="title">Animystic</ThemedText>
         <View style={styles.promoImgContainer}>
@@ -51,18 +51,19 @@ export default function HomeScreen() {
         <View style={[globalStyles.cardContainer, { flex: undefined, alignItems: 'center', gap: defaultPadding }]}>
           <ThemedText type='subtitle'>Curious about an animal?</ThemedText>
           <ThemedText textColor='quietText'>{'We will try to give you information based on what we have available...'}</ThemedText>
-          <ThemedInput value={animalName} onChangeText={setAnimalName} placeholder={error} />
-          <ThemedButton title='Search' isLoading={isLoading} onPress={() => onSubmit()} />
+          <ThemedInput testID='search_input' withShadow value={animalName} onChangeText={setAnimalName} placeholder={error} />
+          <ThemedButton testID='search_btn' withShadow title='Search' isLoading={isLoading} onPress={() => onSubmit()} />
         </View>
       </KeyboardAvoidingView>
       {animals.length ?
-        <View style={styles.recentContainer}>
+        <View style={styles.recentContainer} testID='recent_view'>
           <ThemedText textColor='quietText'>Recent</ThemedText>
           {animals.map((val, index) => (
             <ThemedButton
+              withShadow
+              testID='recent_btn'
               title={val.name}
               onPress={() => onSubmit(val)}
-              textType='default'
               key={index.toString()}
               backgroundColor='tertiaryBackground'
             />

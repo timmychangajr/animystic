@@ -1,9 +1,9 @@
 export const AppColors = {
     text: '#FFFFFF',
     quietText: '#919191',
-    background: '#000000',
+    background: '#000000B5',
     secondaryBackground: '#1A1A1A',
-    tertiaryBackground: '#381A1A',
+    tertiaryBackground: '#472121',
     inputBackground: '#393939',
     buttonBackground: '#327449',
     cardBackground: '#444444',

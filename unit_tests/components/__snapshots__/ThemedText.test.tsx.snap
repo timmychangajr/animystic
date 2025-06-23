@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemedText renders as title 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontFamily": "Outfit",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        {
+          "fontSize": 25,
+          "lineHeight": 32,
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    TITLE
+  </Text>
+</View>
+`;
+
+exports[`ThemedText renders nothing without text 1`] = `null`;
+
+exports[`ThemedText renders with label 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#919191",
+        "fontFamily": "Outfit",
+        "marginRight": 20,
+      }
+    }
+  >
+    labeled
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontFamily": "Outfit",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    TEST
+  </Text>
+</View>
+`;
+
+exports[`ThemedText renders with text 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontFamily": "Outfit",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    TEST
+  </Text>
+</View>
+`;

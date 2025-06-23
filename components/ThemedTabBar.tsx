@@ -1,8 +1,8 @@
 import { AppColors } from '@/constants/Colors';
 import { defaultPadding } from '@/constants/globalStyles';
-import * as Haptics from 'expo-haptics';
 import { Octicons } from '@expo/vector-icons';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import * as Haptics from 'expo-haptics';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { ThemedView } from './ThemedView';
 
@@ -10,15 +10,16 @@ interface Route {
   icon: keyof typeof Octicons.glyphMap,
   name: string,
 }
+export type ThemedTabBarProps = Pick<BottomTabBarProps, 'state' | 'navigation'>;
 
 const routeDetail: Record<string, Route> = {
   index: { name: 'Home', icon: 'home' },
   details: { name: 'Details', icon: 'log' }
 }
-export function ThemedTabBar({ state, navigation }: BottomTabBarProps) {
+export function ThemedTabBar({ state, navigation }: ThemedTabBarProps) {
   return (
     <ThemedView style={styles.container}>
-      <View style={{ flexDirection: 'row', gap: defaultPadding*3 }}>
+      <View style={{ flexDirection: 'row', gap: defaultPadding * 3 }}>
         {state.routes.map((route, index) => {
           const isFocused = state.index === index;
           const showTab = route.name === 'index' || (route.name === 'details' && !!route.params)
@@ -37,8 +38,8 @@ export function ThemedTabBar({ state, navigation }: BottomTabBarProps) {
           };
 
           return showTab && (
-            <TouchableOpacity key={route.key} style={styles.tabButton} onPress={onPress}>
-              <Octicons name={routeDetail[route.name].icon} size={isFocused? 22: 20} color={AppColors.icon} />
+            <TouchableOpacity testID={"tab_" + route.name} key={route.key} style={styles.tabButton} onPress={onPress}>
+              <Octicons name={routeDetail[route.name].icon} size={isFocused ? 22 : 20} color={AppColors.icon} />
               <View
                 style={[
                   styles.indicator,
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   },
   indicator: {
     position: 'absolute',
-    bottom: -defaultPadding/2,
+    bottom: -defaultPadding / 2,
     height: 4,
     width: '70%',
     borderRadius: 999,

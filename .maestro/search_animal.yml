@@ -1,0 +1,13 @@
+appId: com.timmychangajr.animystic
+---
+- launchApp
+- tapOn:
+    id: 'search_input'
+- inputText: 'Spider'
+- tapOn:
+    id: 'search_btn'
+- assertVisible:
+    id: 'animal_name'
+- tapOn:
+    id: 'tab_index'
+- killApp

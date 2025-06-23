@@ -44,7 +44,7 @@ export default async function getImage(query: string): Promise<string | undefine
       image = res.data.results[0].urls.regular
     })
   } catch (e) {
-    console.error('error getting books', e)
+    console.error('error getting image', e)
   }
   return image;
 }

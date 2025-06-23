@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen renders correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  style={
+    [
+      false,
+      {
+        "backgroundColor": "#000000B5",
+      },
+      {
+        "backgroundColor": "#000000B5",
+        "flex": 1,
+        "paddingHorizontal": 20,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 20,
+          "flexDirection": "row",
+          "gap": 8,
+          "justifyContent": "center",
+          "padding": 20,
+          "paddingVertical": 10,
+        },
+        {
+          "flex": 0.5,
+          "flexDirection": "column",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#FFFFFF",
+              "fontFamily": "Outfit",
+            },
+            {
+              "fontSize": 16,
+              "lineHeight": 24,
+            },
+            {
+              "fontSize": 25,
+              "lineHeight": 32,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        Animystic
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 10,
+          "paddingTop": 20,
+        }
+      }
+    >
+      <Image
+        source={
+          {
+            "testUri": "../../../assets/images/ani_sloth.png",
+          }
+        }
+        style={
+          {
+            "borderRadius": 20,
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+      <Image
+        source={
+          {
+            "testUri": "../../../assets/images/ani_monkey.png",
+          }
+        }
+        style={
+          {
+            "borderRadius": 20,
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+      <Image
+        source={
+          {
+            "testUri": "../../../assets/images/ani_frog.png",
+          }
+        }
+        style={
+          {
+            "borderRadius": 20,
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "justifyContent": "flex-start",
+        },
+        {
+          "paddingBottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "borderRadius": 20,
+            "flex": 1,
+            "marginVertical": 20,
+            "padding": 20,
+          },
+          {
+            "alignItems": "center",
+            "flex": undefined,
+            "gap": 20,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#FFFFFF",
+                "fontFamily": "Outfit",
+              },
+              {
+                "fontSize": 16,
+                "lineHeight": 24,
+              },
+              undefined,
+              {
+                "fontSize": 20,
+              },
+              undefined,
+            ]
+          }
+        >
+          Curious about an animal?
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#919191",
+                "fontFamily": "Outfit",
+              },
+              {
+                "fontSize": 16,
+                "lineHeight": 24,
+              },
+              undefined,
+              undefined,
+              undefined,
+            ]
+          }
+        >
+          We will try to give you information based on what we have available...
+        </Text>
+      </View>
+      <TextInput
+        cursorColor="#FFFFFF"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="dot dot dot"
+        placeholderTextColor="#919191"
+        style={
+          [
+            {
+              "elevation": 5,
+              "shadowColor": "#000",
+              "shadowOffset": {
+                "height": 2,
+                "width": 0,
+              },
+              "shadowOpacity": 0.25,
+              "shadowRadius": 3.84,
+            },
+            {
+              "backgroundColor": "#393939",
+              "borderRadius": 9999,
+              "color": "#FFFFFF",
+              "fontFamily": "Outfit",
+              "fontSize": 18,
+              "paddingHorizontal": 20,
+              "paddingVertical": 8,
+              "width": "100%",
+            },
+            undefined,
+          ]
+        }
+        testID="search_input"
+        value=""
+      />
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#327449",
+            "borderRadius": 9999,
+            "elevation": 5,
+            "flexDirection": "row",
+            "gap": 10,
+            "justifyContent": "center",
+            "margin": "auto",
+            "opacity": 1,
+            "paddingHorizontal": 20,
+            "paddingVertical": 8,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.25,
+            "shadowRadius": 3.84,
+          }
+        }
+        testID="search_btn"
+      >
+        <Text />
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#FFFFFF",
+                  "fontFamily": "Outfit",
+                },
+                {
+                  "fontSize": 16,
+                  "lineHeight": 24,
+                },
+                undefined,
+                {
+                  "fontSize": 20,
+                },
+                undefined,
+              ]
+            }
+          >
+            Search
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;

@@ -20,10 +20,10 @@ export function ThemedInput({ style, isSafeArea, backgroundColor, withShadow = f
       style={[
         withShadow && globalStyles.shadowProps,
         {
-          // height: 44,
           fontSize: 18,
           fontFamily: 'Outfit',
           paddingHorizontal: defaultPadding,
+          paddingVertical: defaultPadding / 2.5,
           borderRadius: 9999,
           width: '100%',
           backgroundColor: AppColors[backgroundColor ?? 'inputBackground'],
