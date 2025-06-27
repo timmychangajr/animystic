@@ -3,19 +3,32 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { AppColors } from '@/constants/Colors';
 import { defaultBorderRadius, globalStyles } from '@/constants/globalStyles';
-import { Animal } from '@/services/animal';
+import { Animal } from '@/services/models';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Image, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Image, ScrollView, StyleSheet, View } from 'react-native';
 
 export default function DetailsScreen() {
   const { fromNav } = useLocalSearchParams<{ fromNav?: string }>();
   const [animal, setAnimal] = useState<Animal | undefined>()
+  const [dataList, setDataList] = useState<{ label: string, value: string|undefined }[]>([])
   useEffect(() => {
     if (fromNav && fromNav !== 'undefined') {
       const val = JSON.parse(fromNav) as Animal;
       if (val && val.name !== animal?.name) {
         setAnimal(val);
+        setDataList([
+          { label: 'Nerdy Name', value: val?.taxonomy?.scientific_name },
+          { label: 'Baby Names', value: val?.characteristics?.name_of_young },
+          { label: 'Lifestyle', value: val?.characteristics?.lifestyle },
+          { label: 'Lifespan', value: val?.characteristics?.lifespan },
+          { label: 'Type', value: val?.characteristics?.type },
+          { label: 'Predators', value: val?.characteristics?.predators },
+          { label: 'Diet', value: val?.characteristics?.diet },
+          { label: 'Litter', value: val?.characteristics?.litter_size },
+          { label: 'Prey', value: val?.characteristics?.prey },
+          { label: 'Prey', value: val?.characteristics?.main_prey },
+        ])
       }
     }
   }, [fromNav, animal]);
@@ -28,18 +41,13 @@ export default function DetailsScreen() {
       {animal?.imageUrl &&
         <Image source={{ uri: animal?.imageUrl }} style={[styles.animalImage, globalStyles.shadowProps]} />
       }
-      <ThemedView withShadow style={[globalStyles.cardContainer, { flex: undefined }]} backgroundColor='secondaryBackground'>
-        <ThemedText label='Nerdy Name' type='subtitle'>{animal?.taxonomy?.scientific_name}</ThemedText>
-        <ThemedText label='Baby Names' type='subtitle'>{animal?.characteristics?.name_of_young}</ThemedText>
-        <ThemedText label='Lifestyle' type='subtitle'>{animal?.characteristics?.lifestyle}</ThemedText>
-        <ThemedText label='Lifespan' type='subtitle'>{animal?.characteristics?.lifespan}</ThemedText>
-        <ThemedText label='Type' type='subtitle'>{animal?.characteristics?.type}</ThemedText>
-        <ThemedText label='Predators' type='subtitle'>{animal?.characteristics?.predators}</ThemedText>
-        <ThemedText label='Diet' type='subtitle'>{animal?.characteristics?.diet}</ThemedText>
-        <ThemedText label='Litter' type='subtitle'>{animal?.characteristics?.litter_size}</ThemedText>
-        <ThemedText label='Prey' type='subtitle'>{animal?.characteristics?.prey}</ThemedText>
-        <ThemedText label='Prey' type='subtitle'>{animal?.characteristics?.main_prey}</ThemedText>
-      </ThemedView>
+      <ScrollView style={{ flex: 1 }}>
+        <ThemedView withShadow style={[globalStyles.cardContainer, { flex: undefined }]} backgroundColor='secondaryBackground'>
+          {dataList.map(({ label, value }, index) => (
+            <ThemedText key={`${label}_${index}`} label={label} type='subtitle'>{value}</ThemedText>
+          ))}
+        </ThemedView>
+      </ScrollView >
     </ThemedView>
   ) : <ThemedView>
     <ActivityIndicator color={AppColors.icon} size='large' />
@@ -47,5 +55,8 @@ export default function DetailsScreen() {
 }
 
 const styles = StyleSheet.create({
-  animalImage: { height: 200, borderRadius: defaultBorderRadius },
+  animalImage: {
+    borderRadius: defaultBorderRadius,
+    aspectRatio: 1.5
+  },
 })

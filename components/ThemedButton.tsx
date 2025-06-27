@@ -1,4 +1,4 @@
-import { ActivityIndicator, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { ActivityIndicator, StyleSheet, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
 import { AppColors } from '@/constants/Colors';
 import { defaultPadding, globalStyles } from '@/constants/globalStyles';
@@ -6,7 +6,6 @@ import { Octicons } from '@expo/vector-icons';
 import { ThemedText, ThemedTextProps } from './ThemedText';
 
 export type ThemedButtonProps = TouchableOpacityProps & {
-  isSafeArea?: boolean;
   isLoading?: boolean;
   title?: string;
   textType?: ThemedTextProps['type'];
@@ -16,7 +15,6 @@ export type ThemedButtonProps = TouchableOpacityProps & {
 
 export function ThemedButton({
   style,
-  isSafeArea,
   backgroundColor,
   withShadow = false,
   isLoading = false,
@@ -28,18 +26,10 @@ export function ThemedButton({
       {...otherProps}
       disabled={isLoading}
       style={[
+        styles.buttonContainer,
         withShadow && globalStyles.shadowProps,
-        {
-          backgroundColor: AppColors[backgroundColor ?? 'buttonBackground'],
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: 'auto',
-          borderRadius: 9999,
-          gap: defaultPadding / 2,
-          paddingHorizontal: defaultPadding,
-          paddingVertical: defaultPadding / 2.5,
-        }, style
+        { backgroundColor: AppColors[backgroundColor ?? 'buttonBackground'] },
+        style
       ]}
     >
       {isLoading ? <ActivityIndicator size='small' color={AppColors.text} /> :
@@ -51,3 +41,16 @@ export function ThemedButton({
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 'auto',
+    borderRadius: 9999,
+    gap: defaultPadding / 2,
+    paddingHorizontal: defaultPadding,
+    paddingVertical: defaultPadding / 2.5,
+  }
+})

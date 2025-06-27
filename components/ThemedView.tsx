@@ -17,9 +17,7 @@ export function ThemedView({ style, isSafeArea, backgroundColor, withShadow = fa
       {...otherProps}
       style={[
         withShadow && globalStyles.shadowProps,
-        {
-          backgroundColor: AppColors[backgroundColor ?? 'background']
-        }, style
+        { backgroundColor: AppColors[backgroundColor ?? 'background'] }, style
       ]}
     />
   );

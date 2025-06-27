@@ -1,4 +1,31 @@
-import getImage from "./image";
+export interface Image {
+  id: string;
+  description: string;
+  updated_at: string;
+  urls: {
+    raw: string;
+    full: string;
+    regular: string;
+    small: string;
+    thumb: string;
+  };
+  user: {
+    username: string;
+    name: string;
+  };
+  tags: string[];
+}
+
+export interface ImageResponse {
+  success: boolean;
+  data: {
+    total: number;
+    total_pages: number;
+    current_page: number;
+    per_page: number;
+    results: Image[];
+  };
+}
 
 export interface Animal {
   imageUrl?: string,
@@ -32,25 +59,4 @@ export interface Animal {
     phylum?: string,
     scientific_name?: string
   }
-}
-
-export default async function getAnimal(query: string): Promise<Animal | undefined> {
-  const apiKey = process.env.EXPO_PUBLIC_API_NINJAS_KEY ?? '';
-  let animal;
-  try {
-    await fetch('https://api.api-ninjas.com/v1/animals?name=' + query, {
-      method: 'GET',
-      headers: {
-        'X-Api-Key': apiKey,
-        'Content-Type': 'application/json'
-      },
-    }).then(async data => {
-      const res = await data.json()
-      animal = res[0] as Animal;
-      if (animal?.name) animal.imageUrl = await getImage(animal.name)
-    })
-  } catch (e) {
-    console.error('error getting animal', e)
-  }
-  return animal;
 }

@@ -18,7 +18,7 @@ export function ThemedText({
   const color = AppColors[textColor ?? 'text'];
 
   return rest.children && (
-    <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}>
+    <View style={styles.textContainer}>
       {label ? <Text style={{
         color: AppColors.quietText,
         marginRight: defaultPadding,
@@ -39,6 +39,11 @@ export function ThemedText({
 }
 
 const styles = StyleSheet.create({
+  textContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap'
+  },
   default: {
     fontSize: 16,
     lineHeight: 24,

@@ -8,13 +8,13 @@ export const handlers = [
     if (!!query && query === 'pickle') {
       return HttpResponse.json(null);
     } else if (!!query && query === 'monkey') {
-      return HttpResponse.json([{}])
+      return HttpResponse.json([{}]);
     } else {
       return HttpResponse.json([{ name: query?.toUpperCase() }]);
     }
   }),
-  http.get('https://unsplash-image-search-api.p.rapidapi.com/search?page=1&query', req => {
-    const query = req.request.url.split('=').pop();
+  http.get('https://unsplash-image-search-api.p.rapidapi.com/search', req => {
+    const query = new URL(req.request.url).searchParams.get('query');
     if (!!query && query === 'Spider') {
       return HttpResponse.json(null);
     } else {

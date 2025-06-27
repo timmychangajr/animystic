@@ -10,7 +10,8 @@ exports[`ThemedTabBar renders correctly 1`] = `
       },
       {
         "alignItems": "center",
-        "gap": 10,
+        "flexDirection": "row",
+        "gap": 60,
         "justifyContent": "center",
         "paddingBottom": 44,
       },
@@ -18,70 +19,61 @@ exports[`ThemedTabBar renders correctly 1`] = `
   }
 >
   <View
-    style={
+    accessibilityState={
       {
-        "flexDirection": "row",
-        "gap": 60,
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
       }
     }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "borderBottomColor": "transparent",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+    testID="tab_index"
   >
+    <Text />
     <View
-      accessibilityState={
-        {
-          "busy": undefined,
-          "checked": undefined,
-          "disabled": undefined,
-          "expanded": undefined,
-          "selected": undefined,
-        }
-      }
-      accessibilityValue={
-        {
-          "max": undefined,
-          "min": undefined,
-          "now": undefined,
-          "text": undefined,
-        }
-      }
-      accessible={true}
-      collapsable={false}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "borderBottomColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "opacity": 1,
-        }
+        [
+          {
+            "borderRadius": 999,
+            "bottom": -10,
+            "height": 4,
+            "position": "absolute",
+            "width": "70%",
+          },
+          {
+            "backgroundColor": "#fff",
+          },
+        ]
       }
-      testID="tab_index"
-    >
-      <Text />
-      <View
-        style={
-          [
-            {
-              "borderRadius": 999,
-              "bottom": -10,
-              "height": 4,
-              "position": "absolute",
-              "width": "70%",
-            },
-            {
-              "backgroundColor": "#fff",
-            },
-          ]
-        }
-      />
-    </View>
+    />
   </View>
 </View>
 `;

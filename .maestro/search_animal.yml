@@ -1,6 +1,6 @@
 appId: com.timmychangajr.animystic
 ---
-- launchApp
+- launchApp 
 - tapOn:
     id: 'search_input'
 - inputText: 'Spider'

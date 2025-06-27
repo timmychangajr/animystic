@@ -1,5 +1,5 @@
 import DetailsScreen from '@/app/(tabs)/details';
-import { Animal } from '@/services/animal';
+import { Animal } from '@/services/models';
 import { cleanup, render } from '@testing-library/react-native';
 import { useLocalSearchParams } from 'expo-router';
 

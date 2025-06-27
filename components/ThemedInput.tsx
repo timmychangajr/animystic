@@ -1,4 +1,4 @@
-import { Keyboard, TextInput, TextInputProps } from 'react-native';
+import { Keyboard, StyleSheet, TextInput, TextInputProps } from 'react-native';
 
 import { AppColors } from '@/constants/Colors';
 import { defaultPadding, globalStyles } from '@/constants/globalStyles';
@@ -18,18 +18,22 @@ export function ThemedInput({ style, isSafeArea, backgroundColor, withShadow = f
       cursorColor={AppColors.text}
       placeholderTextColor={AppColors.quietText}
       style={[
+        styles.inputContainer,
         withShadow && globalStyles.shadowProps,
-        {
-          fontSize: 18,
-          fontFamily: 'Outfit',
-          paddingHorizontal: defaultPadding,
-          paddingVertical: defaultPadding / 2.5,
-          borderRadius: 9999,
-          width: '100%',
-          backgroundColor: AppColors[backgroundColor ?? 'inputBackground'],
-          color: AppColors.text,
-        }, style
+        { backgroundColor: AppColors[backgroundColor ?? 'inputBackground'] }, style
       ]}
     />
   );
 }
+
+const styles = StyleSheet.create({
+  inputContainer: {
+    fontSize: 18,
+    fontFamily: 'Outfit',
+    paddingHorizontal: defaultPadding,
+    paddingVertical: defaultPadding / 2.5,
+    borderRadius: 9999,
+    width: '100%',
+    color: AppColors.text,
+  }
+})

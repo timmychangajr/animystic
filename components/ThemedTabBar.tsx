@@ -19,36 +19,34 @@ const routeDetail: Record<string, Route> = {
 export function ThemedTabBar({ state, navigation }: ThemedTabBarProps) {
   return (
     <ThemedView style={styles.container}>
-      <View style={{ flexDirection: 'row', gap: defaultPadding * 3 }}>
-        {state.routes.map((route, index) => {
-          const isFocused = state.index === index;
-          const showTab = route.name === 'index' || (route.name === 'details' && !!route.params)
+      {state.routes.map((route, index) => {
+        const isFocused = state.index === index;
+        const showTab = route.name === 'index' || (route.name === 'details' && !!route.params)
 
-          const onPress = () => {
-            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
-            const event = navigation.emit({
-              type: 'tabPress',
-              target: route.key,
-              canPreventDefault: true,
-            });
+        const onPress = () => {
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
+          const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+            canPreventDefault: true,
+          });
 
-            if (!isFocused && !event.defaultPrevented) {
-              navigation.navigate(route.name, route.params);
-            }
-          };
+          if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate(route.name, route.params);
+          }
+        };
 
-          return showTab && (
-            <TouchableOpacity testID={"tab_" + route.name} key={route.key} style={styles.tabButton} onPress={onPress}>
-              <Octicons name={routeDetail[route.name].icon} size={isFocused ? 22 : 20} color={AppColors.icon} />
-              <View
-                style={[
-                  styles.indicator,
-                  isFocused && styles.tabButtonSelected
-                ]} />
-            </TouchableOpacity>
-          )
-        })}
-      </View>
+        return showTab && (
+          <TouchableOpacity testID={"tab_" + route.name} key={route.key} style={styles.tabButton} onPress={onPress}>
+            <Octicons name={routeDetail[route.name].icon} size={isFocused ? 22 : 20} color={AppColors.icon} />
+            <View
+              style={[
+                styles.indicator,
+                isFocused && styles.tabButtonSelected
+              ]} />
+          </TouchableOpacity>
+        )
+      })}
     </ThemedView>
   )
 }
@@ -56,9 +54,10 @@ export function ThemedTabBar({ state, navigation }: ThemedTabBarProps) {
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 44,
-    gap: 10,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
+    gap: defaultPadding * 3,
   },
   tabButton: {
     borderBottomColor: 'transparent',
