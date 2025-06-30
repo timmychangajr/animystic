@@ -8,6 +8,12 @@ This is a demo project I developed using Expo.
    - Utilized `/animals` endpoint to search user input
  - Unsplash Images API
    - To complement animal info, I use unsplash to append a related image
+  
+## Tech
+- Expo
+- Typescript
+- Maestro (E2E)
+- Jest (Unit Testing)
 
 ## Get started
 
