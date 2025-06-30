@@ -1,6 +1,7 @@
 # Welcome to Animystic!
 
 This is a demo project I developed using Expo.
+## In order to run my demo in your environment, you will need to contact me for the API keys
 
 ## APIs Used
  - Api Ninjas
